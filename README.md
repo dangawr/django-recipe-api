@@ -4,3 +4,16 @@
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
+
+## General Information
+-  Simple recipe REST API project that allows you to upload and store some of your favourite recipes.
+
+- Please use Token authentication. Sample account to generate token:
+
+## Technologies Used
+- Django - version 4
+- Django REST Framework - version 3.13
+- Docker
+- Postgres
+
+
