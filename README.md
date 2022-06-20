@@ -1,1 +1,1 @@
-# django-rest-api
+# Recipe App API
