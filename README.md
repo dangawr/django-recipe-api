@@ -6,9 +6,11 @@
 * [Technologies Used](#technologies-used)
 
 ## General Information
--  Simple recipe REST API project that allows you to upload and store some of your favourite recipes.
+Simple recipe REST API project that allows you to upload and store some of your favourite recipes.
 
-- Please use Token authentication. Sample account to generate token:
+Please use Token authentication. 
+Sample account to generate token - e-mail: test@example.com, pass: test123
+
 
 ## Technologies Used
 - Django - version 4
