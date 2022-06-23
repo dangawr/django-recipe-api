@@ -38,6 +38,7 @@ class RecipeDetailSerializer(RecipeSerializer):
         fields = RecipeSerializer.Meta.fields + ['description', 'image']
 
     def _get_or_create_tags(self, tags, recipe):
+        """Custom method, getting or creating tags as needed."""
         auth_user = self.context['request'].user
         for tag in tags:
             tag_obj, created = Tag.objects.get_or_create(
@@ -47,6 +48,7 @@ class RecipeDetailSerializer(RecipeSerializer):
             recipe.tags.add(tag_obj)
 
     def _get_or_create_ingredients(self, ingredients, recipe):
+        """Custom method, getting or creating ingredients as needed."""
         auth_user = self.context['request'].user
         for ingredient in ingredients:
             ingredient_obj, created = Ingredient.objects.get_or_create(

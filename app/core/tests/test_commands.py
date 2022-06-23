@@ -1,4 +1,4 @@
-# Test of custom django management commands
+"""Test of custom django management commands."""
 
 from unittest.mock import patch
 

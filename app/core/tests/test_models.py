@@ -1,4 +1,5 @@
-# Test for models
+"""Test for models."""
+
 from decimal import Decimal
 from core import models
 from django.test import TestCase

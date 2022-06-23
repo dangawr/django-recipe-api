@@ -10,6 +10,7 @@ from django.conf import settings
 
 
 def recipe_image_file_path(instance, filename):
+    """Generate file path for new recipe image."""
     ext = os.path.splitext(filename)[1]
     filename = f'{uuid.uuid4()}{ext}'
 
@@ -17,7 +18,7 @@ def recipe_image_file_path(instance, filename):
 
 
 class UserManager(BaseUserManager):
-
+    """Custom manager for users."""
     def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('User must have an email address.')
@@ -37,7 +38,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-
+    """User in the system."""
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
@@ -49,6 +50,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Recipe(models.Model):
+    """Recipe object."""
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE
     )
@@ -66,6 +68,7 @@ class Recipe(models.Model):
 
 
 class Tag(models.Model):
+    """Tag for filtering recipes."""
     name = models.CharField(max_length=255)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE
@@ -76,6 +79,7 @@ class Tag(models.Model):
 
 
 class Ingredient(models.Model):
+    """Ingredient for recipes."""
     name = models.CharField(max_length=255)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
